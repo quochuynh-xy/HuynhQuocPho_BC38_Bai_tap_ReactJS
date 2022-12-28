@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+.product_des {
+    position: relative;
+}
+.description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    background-color: #ffa60083;
+}
+.testProduct {
+    position: absolute;
+    position: absolute;
+    width: 52%;
+    left: 50%;
+    top: 25%;
+    transform: translateX(-49%);
+}
