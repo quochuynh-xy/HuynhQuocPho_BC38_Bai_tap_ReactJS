@@ -1,7 +1,7 @@
 import { Component } from "react";
-import Header from "./Header";
+import Header from "./Header/Header";
 // import Model from "./Model";
-import Products from "./Products";
+import Products from "./Products/Products";
 
 class Body extends Component {
   render() {
