@@ -1,0 +1,13 @@
+.bg_image {
+    background-image: url(../../../public/img/bgmovie.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+}
+.bg_color {
+    background-color: #0000008c;
+    height: 100vh;
+}

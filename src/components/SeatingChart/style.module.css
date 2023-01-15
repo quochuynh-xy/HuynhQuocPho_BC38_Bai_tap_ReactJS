@@ -1,0 +1,23 @@
+.screen {
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 20px solid #fd9f5f;
+    position: relative;
+    z-index: 10;
+    margin-bottom: 150px;
+    margin-left: 40px;
+    margin-right: 30px;
+}
+.screen::after {
+    position: absolute;
+    content: '';
+    width: 100%;
+    box-shadow: 0 -10px 10px 5px #ffffff79;
+    left: 0;
+    bottom: -35px;
+    z-index: -1;
+}
+.seats {
+    display: flex;
+    align-items: center;
+}
