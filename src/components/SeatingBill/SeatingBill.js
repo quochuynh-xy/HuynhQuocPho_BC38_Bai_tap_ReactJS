@@ -6,16 +6,16 @@ class SeatingBill extends Component {
     return (
       <React.Fragment>
         <div>
-          <h4 className="text-white">Danh sách ghế đang chọn</h4>
+          <h4 className="text-primary mt-5">Danh sách ghế ngồi</h4>
           <h5 className="text-white">
-            <span className="px-3 me-3 bg-warning fw-bolder"></span>Ghế đã đặt
+            <span className="px-3 me-3 rounded-2 bg-warning fw-bolder"></span>: Ghế đã được đặt.
           </h5>
           <h5 className="text-white">
-            <span className="px-3 me-3 bg-success fw-bolder"></span>Ghế đang
-            chọn
+            <span className="px-3 me-3 rounded-2 bg-light fw-bolder"></span>: Ghế trống.
           </h5>
           <h5 className="text-white">
-            <span className="px-3 me-3 bg-primary fw-bolder"></span>Ghế chưa đặt
+            <span className="px-3 me-3 rounded-2 bg-success fw-bolder"></span>: Ghế đang
+            chọn.
           </h5>
         </div>
         <div>
