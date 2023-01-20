@@ -1,9 +1,6 @@
-// import logo from './logo.svg';
-// import './App.css';
-import Body from "./try-glasses/Body";
-
+import Home from "./components/home";
 function App() {
-  return <Body />;
+  return <Home />;
 }
 
 export default App;
