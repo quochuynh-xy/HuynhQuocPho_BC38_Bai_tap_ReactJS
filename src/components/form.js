@@ -276,7 +276,7 @@ class Form extends Component {
               <input
                 type="text"
                 id="userId"
-                placeholder="Mã sinh viên"
+                placeholder="Mã sinh viên - gồm 4 chữ số"
                 className="form-control"
                 onChange={this.handleChangeData}
                 onBlur={this.validDataInput}
@@ -323,7 +323,7 @@ class Form extends Component {
               <input
                 type="email"
                 id="emailAdress"
-                placeholder="phongkhampk@gmail.com"
+                placeholder="example@gmail.com"
                 className="form-control"
                 onChange={this.handleChangeData}
                 onBlur={this.validDataInput}
@@ -362,6 +362,7 @@ class Form extends Component {
           ...this.props.student,
           ...this.props.selectedStudent,
         },
+        errMessenger: {}
       });
     }
   };
