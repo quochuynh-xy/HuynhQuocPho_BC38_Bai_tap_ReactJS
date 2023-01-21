@@ -26,9 +26,17 @@ const userReducer = (state = initState, action) => {
       })
     }
     case "user/EDIT_USER_DATA": {
-        return produce( state, draff => {
-            draff.selectedStudent = action.payload
+        return produce( state, draft => {
+            draft.selectedStudent = action.payload
         })
+    }
+    case "user/LOOKING_FOR_USER": {
+      const keyword = action.payload;
+      return produce(state, draft => {
+        draft.userList = state.userList.filter(user => {
+          return user.userId.includes(keyword) === true || user.fullName.includes(keyword) === true
+        })
+      })
     }
     default:
       return state;

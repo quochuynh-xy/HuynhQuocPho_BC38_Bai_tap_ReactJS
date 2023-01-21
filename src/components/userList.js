@@ -27,12 +27,27 @@ class UserList extends Component {
     })
     .catch(err => console.log(err))
   }
+  handleFindStudent = (element) => {
+    const number = element.querySelector("input").value
+    this.props.dispatch({
+      type: "user/LOOKING_FOR_USER",
+      payload: number
+    })
+  }
+  // Tự động tải lại khi clear ô tìm kiếm
+  autoLoadData = (e)=> {
+    if(e.target.value.trim()==="") {this.props.fetchDataFromAPI()}
+  }
   render() {
     return (
       <div className="container">
         <div className="d-flex mb-2">
-          <input className="w-50" type="text" />
-          <button className="btn btn-danger ms-3">Tìm kiếm</button>
+          <input className="w-50 ps-2" type="text" placeholder="Nhập mã hoặc tên sinh viên và bấm tìm kiếm"
+          onChange={(e)=> this.autoLoadData(e)}
+           />
+          <button className="btn btn-danger ms-3"
+          onClick={(e)=> {this.handleFindStudent(e.target.parentElement);}}
+          >Tìm kiếm</button>
         </div>
         <table className="table table-bordered">
           <thead>
@@ -67,6 +82,9 @@ class UserList extends Component {
         </table>
       </div>
     );
+  }
+  componentDidMount = (prevProps) => {
+    
   }
 }
 const mapStateToProps = (state) => {

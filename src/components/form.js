@@ -289,7 +289,7 @@ class Form extends Component {
                 </span>
               )}
               <input
-                type="number"
+                type="text"
                 id="phoneNumber"
                 placeholder="087xxxx..."
                 className="form-control"
