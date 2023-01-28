@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Form from "./form";
 import UserList from "./userList";
+import { actionFetchData } from "../reducer/actions/actions";
 class Home extends Component {
   fetchDataFromAPI = () => {
     axios({
@@ -11,10 +12,7 @@ class Home extends Component {
     })
       .then( res => res.data)
       .then (data => {
-        this.props.dispatch({
-          type: "user/UPDATE_USER_DATA",
-          payload: data
-        })
+        this.props.dispatch(actionFetchData(data))
       })
       .catch((err) => {
         console.log(err);

@@ -1,36 +1,30 @@
 import produce from "immer";
+import * as types from "./const/types";
 const initState = {
   userList: [
     {
-      fullName: "fullName 1",
-      phoneNumber: 71,
-      emailAdress: "emailAdress 1",
-      Id: "1",
-      userId: "001"
-    },
-    {
-      fullName: "fullName 2",
-      phoneNumber: 51,
-      emailAdress: "emailAdress 2",
-      Id: "2",
-      userId: "002"
+      fullName: "đang tải dữ liệu",
+      phoneNumber: "đang tải dữ liệu",
+      emailAdress: "đang tải dữ liệu",
+      Id: "",
+      userId: "đang tải dữ liệu"
     },
   ],
   selectedStudent: null
 };
 const userReducer = (state = initState, action) => {
   switch (action.type) {
-    case "user/UPDATE_USER_DATA": {
+    case types.UPDATE_USER_DATA: {
       return produce( state , draffState => {
          draffState.userList = action.payload
       })
     }
-    case "user/EDIT_USER_DATA": {
+    case types.EDIT_USER_DATA: {
         return produce( state, draft => {
             draft.selectedStudent = action.payload
         })
     }
-    case "user/LOOKING_FOR_USER": {
+    case types.LOOKING_FOR_USER: {
       const keyword = action.payload;
       return produce(state, draft => {
         draft.userList = state.userList.filter(user => {
