@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import css from "./style.module.css";
+import { actionAddToCart } from "../../redux/actions/actions";
 class SingleRow extends Component {
   renderSeats = () => {
     if(!this.props.seats.hang) {
@@ -61,7 +62,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    handleSelect: (seatInfo)=>{dispatch({type: "home/ADD_TO_CART", payload: seatInfo})}
+    handleSelect: (seatInfo)=>{dispatch(actionAddToCart(seatInfo))}
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SingleRow);

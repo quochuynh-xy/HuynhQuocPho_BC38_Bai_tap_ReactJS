@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import * as actions from "../../redux/actions/actions";
 import { connect } from "react-redux";
 class SeatingBill extends Component {
   render() {
@@ -32,7 +32,7 @@ class SeatingBill extends Component {
                 return (
                   <tr key={item.soGhe}>
                     <td>{item.soGhe}</td>
-                    <td>{item.gia}</td>
+                    <td>{item.gia.toLocaleString()}</td>
                     <td className="text-center">
                       <button className="bg-danger text-white rounded-3 border-0"
                         onClick={()=>this.props.handleRemove(item.soGhe)}
@@ -48,7 +48,7 @@ class SeatingBill extends Component {
                 <td colSpan={2} className="text-danger">
                   {this.props.seatsList.reduce((init, item) => {
                     return (init += item.gia);
-                  }, 0)} đ
+                  }, 0).toLocaleString()} đ
                 </td>
               </tr>
             </tbody>
@@ -68,7 +68,7 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = dispatch => {
   return {
-    handleRemove: (data) => dispatch({type: "bill/REMOVE_FROM_BILL", payload: data})
+    handleRemove: (data) => dispatch(actions.actionRemoveFromCart(data))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(SeatingBill);
